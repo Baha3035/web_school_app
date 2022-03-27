@@ -17,7 +17,8 @@ sql ='''CREATE TABLE "students" (
     "DATE_OF_BIRTH" TEXT,
     "CLASS" TEXT,
     "ADDRESS" TEXT,
-    "GENDER" TEXT
+    "GENDER" TEXT,
+    "ACTIVE" TEXT DEFAULT yes
 )'''
 cur.execute(sql)
 
