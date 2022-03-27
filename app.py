@@ -64,9 +64,9 @@ def delete_user(uid):
 def active_user(uid,checked):
     print (checked)
     if checked == "True":
-        update_val = "yes"
+        update_val = "да"
     else:
-        update_val = "no"
+        update_val = "нет"
     con=sql.connect("db_web.db")
     cur=con.cursor()
     cur.execute("update students set ACTIVE=? where UID=?",(update_val,uid,))

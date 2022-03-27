@@ -26,7 +26,7 @@
           <td>{{row.ADDRESS}}</td>
           <td>{{row.GENDER}}</td>
           <td>{{row.ACTIVE}}
-            {% if row.ACTIVE=="no" %}
+            {% if row.ACTIVE=="нет" %}
             <a href='{{url_for("active_user",uid=row.UID,checked = true)}}' class='btn btn-success'>Activate</a>
             {% else %}
             <a href='{{url_for("active_user",uid=row.UID,checked = false)}}' class='btn btn-warning'>un-Activate</a>
