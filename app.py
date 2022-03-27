@@ -59,6 +59,19 @@ def delete_user(uid):
     con.commit()
     flash('User Deleted','warning')
     return redirect(url_for("index"))
+
+@app.route("/active_user/<string:uid>/<string:checked>")
+def active_user(uid,checked):
+    print (checked)
+    if checked == "True":
+        update_val = "yes"
+    else:
+        update_val = "no"
+    con=sql.connect("db_web.db")
+    cur=con.cursor()
+    cur.execute("update students set ACTIVE=? where UID=?",(update_val,uid,))
+    con.commit()
+    return redirect('/index')
     
 if __name__=='__main__':
     app.secret_key='admin123'
